@@ -8,7 +8,17 @@ data class AchievementDTO(
     val prerequisites: List<Int>,
     val current: Int,
     val max: Int,
-    val done: Boolean
+    val done: Boolean,
+    val bits: List<BitDTO>?
+)
+
+//retorna da API sub-tarefas de uma conquista
+data class BitDTO(
+    val id: Int?,
+    val type: String,
+    val text: String,
+    val completed: Boolean?
+
 )
 
 
