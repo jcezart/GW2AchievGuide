@@ -10,31 +10,22 @@ android {
     namespace = "com.juliocezar.gw2achievguide"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.juliocezar.gw2achievguide"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-
-    buildFeatures {
-        buildConfig = true
-    }
-
-        val localProperties = project.rootProject.file("local.properties")
-        val properties =  Properties()
-        properties.load(localProperties.inputStream())
-
-        val apiKey = properties.getProperty("API_KEY")
-
-        buildConfigField(
-            type = "String",
-            name = "API_KEY",
-            value = apiKey
-        )
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
 
     }
     buildTypes {
