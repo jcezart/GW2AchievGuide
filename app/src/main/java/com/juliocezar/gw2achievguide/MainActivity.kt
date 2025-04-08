@@ -15,7 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import com.juliocezar.gw2achievguide.common.data.remote.RetrofitClient
-import com.juliocezar.gw2achievguide.common.data.remote.model.GW2ApiService
+import com.juliocezar.gw2achievguide.common.data.remote.GW2ApiService
 import com.juliocezar.gw2achievguide.ui.theme.GW2AchievGuideTheme
 import kotlinx.coroutines.launch
 
