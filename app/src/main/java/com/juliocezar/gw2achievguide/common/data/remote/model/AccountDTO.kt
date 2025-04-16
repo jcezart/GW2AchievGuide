@@ -7,7 +7,15 @@ data class AccountDTO(
     val id: String,
     val name: String,
     val access: List<String>,
-    @SerializedName("fractal_level") val fractalLevel: Int
+    @SerializedName("fractal_level") val fractalLevel: Int,
+    val world: Int, //verificar em /v2/worlds
+    val created: String,
+    @SerializedName("wvw_rank") val wvwRank: Number
+)
+
+data class WorldDTO(
+    val id: Int,
+    val name: String
 )
 
 
