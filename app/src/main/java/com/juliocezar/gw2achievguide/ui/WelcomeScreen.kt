@@ -40,7 +40,7 @@ val textFontIt = FontFamily(Font(R.font.lato_italic))
 val textFontBlack = FontFamily(Font(R.font.lato_black))
 
 
-// 2F1C9407-1414-FE4F-AD76-9A3340C18B436EE48AF7-7A47-4EA9-AAB0-5251CEA0A800
+
 
 @Composable
 fun WelcomeScreen(modifier: Modifier, navController: NavController, viewModel: WelcomeViewModel){
