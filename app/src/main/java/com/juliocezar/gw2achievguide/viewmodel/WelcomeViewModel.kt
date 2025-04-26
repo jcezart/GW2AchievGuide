@@ -1,5 +1,6 @@
 package com.juliocezar.gw2achievguide.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.juliocezar.gw2achievguide.common.data.remote.GW2ApiService
@@ -16,7 +17,7 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(private val retrofitFactory: RetrofitFactory): ViewModel()  {
 
     init {
-        android.util.Log.d("WelcomeViewModel", "ViewModel criado com sucesso")
+        Log.d("WelcomeViewModel", "ViewModel criado: ${this.hashCode()}")
     }
 
     private val _isLoading = MutableStateFlow(false)
@@ -44,8 +45,10 @@ class WelcomeViewModel @Inject constructor(private val retrofitFactory: Retrofit
             _isLoading.value = true
             try {
                 val account = getApiService().getAccount()
+                Log.d("WelcomeViewModel", "Validado com sucesso: ${account.name}")
                 _accountResult.value = AccountResult.Success(account)
             } catch (e: Exception) {
+                Log.d("WelcomeViewModel", "Erro na validação: ${e.message}")
                 _accountResult.value = AccountResult.Error(e.message ?: "Erro desconhecido")
             }
 
