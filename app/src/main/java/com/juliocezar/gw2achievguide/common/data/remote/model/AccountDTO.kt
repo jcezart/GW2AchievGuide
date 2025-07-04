@@ -13,10 +13,7 @@ data class AccountDTO(
     @SerializedName("wvw_rank") val wvwRank: Number
 )
 
-data class WorldDTO(
-    val id: Int,
-    val name: String
-)
+
 
 
 // /v2/achievements e /v2/account/achievements  /v2/account
